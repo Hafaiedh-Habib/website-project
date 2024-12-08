@@ -14,16 +14,26 @@ body {
     font-style: normal;
 }
 
-.section1{
-    margin-top: 70px;
+.head{
+    position: relative;
+    top: 0;
 }
-.menu-bar, .login-bar, .shopping-bar {
+.section1{
+    margin-top: 59px;
+}
+
+.titre{
+    margin-top: 30px;
+}
+.login-bar, .shopping-bar {
     position: absolute;
     top: 25px;
     scale: 1.2;
-    padding: 30px;
+    padding: 30px 0px;
+    margin-right: 10px;
     margin-top: 50px;
 }
+
 
 .login-bar {
     right: 60px;
@@ -33,16 +43,18 @@ body {
     right: 10px;
 }
 
-.login-bar, .shopping-bar {
-    font-size: 20px;
-    color: #555;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
+
+.login-bar span,
+.shopping-bar span {
+    font-size: 24px; 
+    border-radius: 5px;
+    color: #333; 
+    transition: color 0.3s ease;
 }
 
-.login-bar:hover, .shopping-bar:hover {
-    color: #ff6f61;
-    transform: scale(1.1);
+.login-bar span:hover,
+.shopping-bar span:hover {
+    color: #007bff;
 }
 
 
@@ -50,27 +62,19 @@ body {
     transition: box-shadow 0.3s ease;
 }
 
+
 .login-bar:hover .material-icons-outlined, .shopping-bar:hover .material-icons-outlined {
     box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
 }
 
-.head {
-    background-color: #afc4d5;
-    height: 200px;
-    margin-bottom: none;
+.head{
+    background-color:#afc4d5;
 }
-
 nav ul {
     float: left;
     margin-top: 10px;
     position: absolute;
     top: 200px
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 20px 50px;
 }
 
 nav ul li a {
@@ -79,7 +83,6 @@ nav ul li a {
     text-transform: uppercase;
     padding: 5px 10px;
     border-radius: 3px;
-    margin-left: 50px;
 }
 
 nav a.active  , nav a:hover,.flesh:hver{
@@ -90,6 +93,7 @@ nav a.active  , nav a:hover,.flesh:hver{
 nav ul li a.active , nav ul li a:hover{
     background-color: #1b9bff;
     transition: .5s;
+    color: white;
 }
 .flesh a:hover{
     color: #1b9bff;
@@ -124,12 +128,9 @@ nav ul li a.active , nav ul li a:hover{
 .nv-pts{
     text-align: center;
     font-size: 20px;
-    margin-top: 20px;
     color: rgb(4, 56, 241);
-    margin-top: 20px;
     font-family: "Parkinsans", sans-serif;
 }
-
 
 .nv-produit img{
     height: 200px;
@@ -449,7 +450,8 @@ input[type="email"]{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
     background-color: rgba(128, 128, 128, 0.606);
     height: 200px;
     align-content: center;
@@ -500,7 +502,7 @@ input[type="email"]{
     }
 }
 
-@media (max-width:1275px) {
+@media (max-width:1400px) {
     .checkbtn {
         display: block;
     }
@@ -508,10 +510,8 @@ input[type="email"]{
     ul {
         position: relative;
         width: 100%;
-        height: 500x;
+        height: 500px;
         background: #2c3e50;
-        top: 0;
-        margin-top: 0;
         left: -100%;
         text-align: center;
         transition: all 0.5s ease;
@@ -588,7 +588,7 @@ input[type="email"]{
 }
 @media (max-width : 1200px){
     .newsletter{
-        top: 100px; 
+        top: 70px; 
         width: 100%;
         left: 0;
         text-align: center;
@@ -606,7 +606,7 @@ input[type="email"]{
      .info1{
         position: relative;
         width: 70%;
-        top: 150px;
+        top: 120px;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -659,3 +659,33 @@ input[type="email"]{
     }
 }
 
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.animer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1b9bff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animer:hover {
+    color: #afc4d5;
+    transform: translateY(-5px); 
+}
+
+@media (max-width : 480px){
+    .foot{
+        height: 1600px;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit | msi</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function changeImage(imageSrc) {
+            const displayedImage = document.getElementById("displayed-image");
+            displayedImage.src = imageSrc;
+        }
+    </script>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="displayed-image" src="msi.png" alt="Produit principal">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="msi-photo/image1.jpg" alt="Image 1" onclick="changeImage('msi-photo/image1.jpg')">
+                    <img class="thumbnail" src="msi-photo/image2.jpg" alt="Image 2" onclick="changeImage('msi-photo/image2.jpg')">
+                    <img class="thumbnail" src="msi-photo/image3.jpg" alt="Image 3" onclick="changeImage('msi-photo/image3.jpg')">
+                    <img class="thumbnail" src="msi-photo/image4.jpg" alt="Image 4" onclick="changeImage('msi-photo/image4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>Pc Portable Gamer MSI Thin GF63
+                    12UCX-216XFR, I5-12ème, 8Go
+                    RTX 2050 "15.6" FHD 144Hz</h1>
+                <p class="product-description">
+                    pc Gamer MSI, CPU Intel Core i5-12450H Octa-Core (up to 4.4GHz Turbo 12Mo Smart Cache), Mémoire RAM 8Go DDR4, Disque Dur 512Go SSD NVMe, C.Graphique NVIDIA GeForce RTX 2050 4Go GDDR6, WiFi 6, Bluetooth 5.2, Clavier Rétroéclairé Rouge, Ecran 15.6" FHD 144Hz.
+                </p>
+                <p class="product-price">Prix : <strong>2499,000 TND</strong></p>
+                <button class="buy-btn">Confirmer l'achat</button>
+            </div>    
+        </div>
+        <div class="payment-facility">
+            <h2>Facilité de Paiement</h2>
+            <p>3 fois sans intérêts</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>3 mois</th>
+                        <th>6 mois</th>
+                        <th>9 mois</th>
+                        <th>12 mois</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>833.000 TND</td>
+                        <td>476.500 TND</td>
+                        <td>373.666 TND</td>
+                        <td>268.250 TND</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

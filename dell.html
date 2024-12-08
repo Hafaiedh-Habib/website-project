@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit | dell</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function changeImage(imageSrc) {
+            const displayedImage = document.getElementById("displayed-image");
+            displayedImage.src = imageSrc;
+        }
+    </script>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="displayed-image" src="dell.png" alt="Produit principal">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="dell-photo/image1.jpg" alt="Image 1" onclick="changeImage('dell-photo/image1.jpg')">
+                    <img class="thumbnail" src="dell-photo/image2.jpg" alt="Image 2" onclick="changeImage('dell-photo/image2.jpg')">
+                    <img class="thumbnail" src="dell-photo/image3.jpg" alt="Image 3" onclick="changeImage('dell-photo/image3.jpg')">
+                    <img class="thumbnail" src="dell-photo/image4.jpg" alt="Image 4" onclick="changeImage('dell-photo/image4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>Pc Portable Gamer DELL 
+                    INSPIRON G15 I5-11é,8Go
+                    RTX3050,Ecran 15.6" FHD</h1>
+                <p class="product-description">
+                    Processeur Intel Core i5-11400H Hexa-Core( 2.70 GHz up to 4.50 GHz Turbo, 12 Mo de mémoire cache), Mémoire RAM 8 Go DDR4, Disque Dur 512 Go SSD M.2 PCIe NVMe, Carte Graphique NVIDIA GeForce RTX3050 4 Go GDDR6 , Wifi, Bluetooth, HDMI, Clavier rétroéclairé, Ecran 15.6" FULL HD.
+                </p>
+                <p class="product-price">Prix : <strong>2785,000 TND</strong></p>
+                <button class="buy-btn">Confirmer l'achat</button>
+            </div>    
+        </div>
+        <div class="payment-facility">
+            <h2>Facilité de Paiement</h2>
+            <p>3 fois sans intérêts</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>3 mois</th>
+                        <th>6 mois</th>
+                        <th>9 mois</th>
+                        <th>12 mois</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>928.333 TND</td>
+                        <td>524.166 TND</td>
+                        <td>369.444 TND</td>
+                        <td>292.083 TND</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit | aroux</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function changeImage(imageSrc) {
+            const displayedImage = document.getElementById("displayed-image");
+            displayedImage.src = imageSrc;
+        }
+    </script>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="displayed-image" src="Aroux.png" alt="Produit principal">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="aroux-photo/image1.jpg" alt="Image 1" onclick="changeImage('aroux-photo/image1.jpg')">
+                    <img class="thumbnail" src="aroux-photo/image2.jpg" alt="Image 2" onclick="changeImage('aroux-photo/image2.jpg')">
+                    <img class="thumbnail" src="aroux-photo/image3.jpg" alt="Image 3" onclick="changeImage('aroux-photo/image3.jpg')">
+                    <img class="thumbnail" src="aroux-photo/image4.jpg" alt="Image 4" onclick="changeImage('aroux-photo/image4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>PC Portable Gamer GIGABYTE
+                    AORUS 16X ASG i9 14è Gén 
+                    32Go RTX 4070</h1>
+                <p class="product-description">
+                    Écran 16" WQXGA, 165Hz - Processeur: Intel Core i9-14900HX (Up to 5.8 GHz Turbo max, 36 Mo de mémoire cache, 24-Cores) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 32 Go DDR5 - Disque dur: 2To SSD - Carte graphique: NVIDIA GeForce RTX 4070 (8 Go de mémoire dédiée GDDR6), avec Wi-Fi, Bluetooth, 2x USB 3.2 Gen 2 Type-A, 1x USB 3.2 Gen2 (Type C, prise en charge DP 1.4), 1x Type-C avec Thunderbolt™4 (prise en charge USB4, DisplayPort™ 1.4 et Power Delivery 3.0), 1x HDMI 2.1, 1x RJ-45, 1x Prise audio prise en charge combo micro/casque, 1x entrée CC, 1x MicroSD (UHS-II) - Clavier rétroéclairé RVB à 3 zones, course des touches jusqu'à 1,7 mm (support N-Key) - Couleur: Gris - Garantie: 2 ans
+                </p>
+                <p class="product-price">Prix : <strong>6999,000 TND</strong></p>
+                <button class="buy-btn">Confirmer l'achat</button>
+            </div>    
+        </div>
+        <div class="payment-facility">
+            <h2>Facilité de Paiement</h2>
+            <p>3 fois sans intérêts</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>3 mois</th>
+                        <th>6 mois</th>
+                        <th>9 mois</th>
+                        <th>12 mois</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2333.000 TND</td>
+                        <td>1229.568 TND</td>
+                        <td>849.480 TND</td>
+                        <td>657.457 TND</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

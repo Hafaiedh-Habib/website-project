@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit | raider</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function changeImage(imageSrc) {
+            const displayedImage = document.getElementById("displayed-image");
+            displayedImage.src = imageSrc;
+        }
+    </script>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="displayed-image" src="raider.png" alt="Produit principal">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="raider-photo/image1.jpg" alt="Image 1" onclick="changeImage('raider-photo/image1.jpg')">
+                    <img class="thumbnail" src="raider-photo/image2.jpg" alt="Image 2" onclick="changeImage('raider-photo/image2.jpg')">
+                    <img class="thumbnail" src="raider-photo/image3.jpg" alt="Image 3" onclick="changeImage('raider-photo/image3.jpg')">
+                    <img class="thumbnail" src="raider-photo/image4.jpg" alt="Image 4" onclick="changeImage('raider-photo/image4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>PC Portable Gamer MSI Raider
+                    GE68 HX 13V i7 13è Gén
+                    16Go RTX 4060</h1>
+                <p class="product-description">
+                    Écran 16" QHD+, IPS, 240 Hz - Processeur: Intel Core i7-13700HX (Up to 5.00 GHz Turbo max, 30 Mo de mémoire cache, 16-Cores) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 16 Go DDR5 - Disque dur: 1 To SSD - Carte graphique: NVIDIA GeForce RTX 4060 (8 Go de mémoire dédiée GDDR6) avec Wi-Fi, Bluetooth, 1x Thunderbolt™ 4, 1x Type-C USB 3.2 Gen 2, 1x USB 3.2 Gen 1 Type-A, 1x USB 3.2 Gen 2 Type-A, 1x HDMI™ 2.1, 1x RJ45, 1x prise combinée entrée micro/sortie casque, 1x Lecteur de carte SD Express - Clavier Rétroéclairé LED RGB touche par touche - Couleur: Noir - Garantie: 1 an
+                </p>
+                <p class="product-price">Prix : <strong>6299,000 TND</strong></p>
+                <button class="buy-btn">Confirmer l'achat</button>
+            </div>    
+        </div>
+        <div class="payment-facility">
+            <h2>Facilité de Paiement</h2>
+            <p>3 fois sans intérêts</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>3 mois</th>
+                        <th>6 mois</th>
+                        <th>9 mois</th>
+                        <th>12 mois</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2443.000 TND</td>
+                        <td>1287.295 TND</td>
+                        <td>889.334 TND</td>
+                        <td>688.279 TND</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

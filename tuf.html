@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit | Asus TUF</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function changeImage(imageSrc) {
+            const displayedImage = document.getElementById("displayed-image");
+            displayedImage.src = imageSrc;
+        }
+    </script>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="displayed-image" src="https://www.scoop.com.tn/49534-large_default/pc-portable-gamer-asus-tuf507ui-ryzen-9-8945h-16go-rtx-4070-156-144hz.jpg" alt="Produit principal">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="asus-photo/image1.jpg" alt="Image 1" onclick="changeImage('asus-photo/image1.jpg')">
+                    <img class="thumbnail" src="asus-photo/image2.jpg" alt="Image 2" onclick="changeImage('asus-photo/image2.jpg')">
+                    <img class="thumbnail" src="asus-photo/image3.jpg" alt="Image 3" onclick="changeImage('asus-photo/image3.jpg')">
+                    <img class="thumbnail" src="asus-photo/image4.jpg" alt="Image 4" onclick="changeImage('asus-photo/image4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>Pc Portable Gamer Asus TUF507UI, Ryzen™ 9 8945H, 16Go, RTX 4070 "15.6" 144Hz</h1>
+                <p class="product-description">
+                    Pc Portable Gamer ASUS TUF A15, Processeur AMD Ryzen™ 9 8945H 8 Cores, Mémoire Ram 16 Go DDR5 - 5600, Stockage: 512 Go SSD M.2, Carte Graphique Nvidia GeForce RTX™ 4070 (8Go GDDR6), Wi-Fi 6, Clavier Chiclet RGB, Recharge rapide, Ecran IPS 15.6" FHD 144Hz.
+                </p>
+                <p class="product-price">Prix : <strong>4099,000 TND</strong></p>
+                <button class="buy-btn">Confirmer l'achat</button>
+            </div>    
+        </div>
+        <div class="payment-facility">
+            <h2>Facilité de Paiement</h2>
+            <p>3 fois sans intérêts</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>3 mois</th>
+                        <th>6 mois</th>
+                        <th>9 mois</th>
+                        <th>12 mois</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1476.333 TND</td>
+                        <td>780.004 TND</td>
+                        <td>539.107 TND</td>
+                        <td>417.413 TND</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

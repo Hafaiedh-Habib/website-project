@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit | gigabyte</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function changeImage(imageSrc) {
+            const displayedImage = document.getElementById("displayed-image");
+            displayedImage.src = imageSrc;
+        }
+    </script>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="displayed-image" src="GigabytePromos.png" alt="Produit principal">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="gigabyte-photo/image1.jpg" alt="Image 1" onclick="changeImage('gigabyte-photo/image1.jpg')">
+                    <img class="thumbnail" src="gigabyte-photo/image2.jpg" alt="Image 2" onclick="changeImage('gigabyte-photo/image2.jpg')">
+                    <img class="thumbnail" src="gigabyte-photo/image3.jpg" alt="Image 3" onclick="changeImage('gigabyte-photo/image3.jpg')">
+                    <img class="thumbnail" src="gigabyte-photo/image4.jpg" alt="Image 4" onclick="changeImage('gigabyte-photo/image4.jpg')">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>PC Portable Gamer GIGABYTE
+                    G5 KF5 i7 13è Gén 16Go
+                    RTX 4060</h1>
+                <p class="product-description">
+                    Écran 15.6" Full HD, 144Hz - Processeur: Intel Core i7-13620H (Up to 4.90 GHz Turbo max, 24 Mo de mémoire cache, 10-Cores) - Système d'exploitation: FreeDos - Mémoire RAM: 16 Go DDR5-4800 - Disque dur: 1To SSD - Carte graphique: NVIDIA GeForce RTX 4060 (8 Go de mémoire dédiée GDDR6) avec Wi-Fi, Bluetooth, 1x USB 2.0 (Type A), 1x USB 3.2 Gen 1 (Type A), 2x USB 3.2 Gen 2 (Type C), 1x HDMI™ (avec HDCP), 1x port LAN RJ-45, 1x Mini DP 1.4, 1 x prise d'entrée CC, 1x prise microphone, 1 x 2-in- 1 prise audio (casque/microphone), 1x lecteur de carte MicroSD - Clavier pleine taille éclairé multi-langues, 15 couleurs, avec pavé numérique - Couleur: Noir - Garantie: 2 ans
+                </p>
+                <p class="product-price">Prix : <strong>3545,000 TND</strong></p>
+                <button class="buy-btn">Confirmer l'achat</button>
+            </div>    
+        </div>
+        <div class="payment-facility">
+            <h2>Facilité de Paiement</h2>
+            <p>3 fois sans intérêts</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>3 mois</th>
+                        <th>6 mois</th>
+                        <th>9 mois</th>
+                        <th>12 mois</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1181.667 TND</td>
+                        <td>625.367 TND</td>
+                        <td>432.349 TND</td>
+                        <td>334.846 TND</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
