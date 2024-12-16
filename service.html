@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Service | ExtraStore</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .img-logo img {
+            height: 50px;
+        }
+
+        .service {
+            padding: 50px 20px 10px 20px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555555;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            color: white;
+        }
+
+        @media (min-width : 665px){
+            footer{
+                position: fixed;
+                bottom: 0;
+        
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo ExtraStore">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <section class="service">
+        <h1>Nos Services</h1>
+        <p>Nous offrons une large gamme de services pour accompagner vos achats :</p>
+        <ul>
+            <li>Assistance pré-achat</li>
+            <li>Garantie produit</li>
+            <li>Livraison rapide</li>
+            <li>Retour facile sous 14 jours</li>
+            <li>Support technique après-vente</li>
+        </ul>
+        <h2>Assistance technique</h2>
+        <p>En cas de problème technique, notre équipe est là pour vous aider rapidement via chat en direct ou téléphone.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 ExtraStore | Tous droits réservés</p>
+    </footer>
+</body>
+</html>

@@ -10,6 +10,23 @@
             const displayedImage = document.getElementById("displayed-image");
             displayedImage.src = imageSrc;
         }
+
+        function addToCart() {
+            const product = {
+                name: "Pc Portable Gamer Asus TUF507UI, Ryzen™ 9 8945H, 16Go, RTX 4070",
+                description: "Processeur AMD Ryzen™ 9 8945H, 16Go RAM, RTX 4070, 15.6\" 144Hz",
+                price: 4099.000,
+                image: document.getElementById("displayed-image").src
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push(product);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            window.location.href = "panier.html";
+        }
     </script>
 </head>
 <body>
@@ -40,7 +57,7 @@
                     Pc Portable Gamer ASUS TUF A15, Processeur AMD Ryzen™ 9 8945H 8 Cores, Mémoire Ram 16 Go DDR5 - 5600, Stockage: 512 Go SSD M.2, Carte Graphique Nvidia GeForce RTX™ 4070 (8Go GDDR6), Wi-Fi 6, Clavier Chiclet RGB, Recharge rapide, Ecran IPS 15.6" FHD 144Hz.
                 </p>
                 <p class="product-price">Prix : <strong>4099,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
+                <button class="buy-btn" onclick="addToCart()">Confirmer l'achat</button>
             </div>    
         </div>
         <div class="payment-facility">

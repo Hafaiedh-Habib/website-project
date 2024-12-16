@@ -10,6 +10,23 @@
             const displayedImage = document.getElementById("displayed-image");
             displayedImage.src = imageSrc;
         }
+    
+        function addToCart() {
+            const product = {
+                name: "PC Portable Gamer HP Victus 15-fa1007nk i5 13è Gén 8Go RTX 2050",
+                description: "Écran 15.6'' FULL HD IPS, Processeur Intel Core i5-13420H, 8Go RAM, NVIDIA GeForce RTX 2050, 512 Go SSD",
+                price: 1999.000,
+                image: document.getElementById("displayed-image").src
+            };
+    
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+            cart.push(product);
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+    
+            window.location.href = "panier.html";
+        }
     </script>
 </head>
 <body>
@@ -42,7 +59,7 @@
                     Écran 15.6'' FULL HD IPS - Processeur: Intel Core i5-13420H (Up to 4.60 GHz Turbo max, 12 Mo de mémoire cache, Octa-Core) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 8 Go DDR4-3200 MHz - Disque Dur: 512 Go SSD - Carte Graphique: NVIDIA GeForce RTX 2050 (4 Go de mémoire dédiée GDDR6) avec WiFi, Bluetooth, 2x USB Type-A, 1x USB Type-C, 1x HDMI 2.1, 1x RJ-45, 1 prise secteur Smart Pin, 1 prise combinée casque/microphone - Clavier rétroéclairé, de grande taille avec pavé numérique - Couleur: Silver Mica - Garantie: 1 an
                 </p>
                 <p class="product-price">Prix : <strong>1999,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
+                <button class="buy-btn" onclick="addToCart()">Confirmer l'achat</button>
             </div>    
         </div>
         <div class="payment-facility">

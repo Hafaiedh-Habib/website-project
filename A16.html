@@ -1,75 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Produit | A16</title>
-    <link rel="stylesheet" href="style2.css">
-    <script>
-        function changeImage(imageSrc) {
-            const displayedImage = document.getElementById("displayed-image");
-            displayedImage.src = imageSrc;
-        }
-    </script>
-</head>
-<body>
-    <header class="head">
-        <div class="img-logo">
-            <img class="img" src="extrastore.png" alt="Logo">
-        </div>
-        <nav class="nav-bar">
-            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
-        </nav>
-    </header>
-    <main class="product-page">
-        <div class="product-container">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="displayed-image" src="Tuf.png" alt="Produit principal">
-                </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" src="A16-photo/image1.jpg" alt="Image 1" onclick="changeImage('A16-photo/image1.jpg')">
-                    <img class="thumbnail" src="A16-photo/image2.jpg" alt="Image 2" onclick="changeImage('A16-photo/image2.jpg')">
-                    <img class="thumbnail" src="A16-photo/image3.jpg" alt="Image 3" onclick="changeImage('A16-photo/image3.jpg')">
-                    <img class="thumbnail" src="A16-photo/image4.jpg" alt="Image 4" onclick="changeImage('A16-photo/image4.jpg')">
-                </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Produit | A16</title>
+        <link rel="stylesheet" href="style2.css">
+        <script>
+            function changeImage(imageSrc) {
+                const displayedImage = document.getElementById("displayed-image");
+                displayedImage.src = imageSrc;
+            }
+        
+            function addToCart() {
+                const product = {
+                    name: "PC Portable ASUS TUF Gaming A16 Advantage Edition AMD Ryzen 9 16Go 512Go SSD",
+                    description: "Écran 16\" Full HD+ WUXGA IPS, AMD Ryzen™ 9 7940HS, 16 Go RAM, AMD Radeon™ RX 7600S, 512 Go SSD",
+                    price: 4539.000,
+                    image: document.getElementById("displayed-image").src
+                };
+        
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+                cart.push(product);
+        
+                localStorage.setItem("cart", JSON.stringify(cart));
+        
+                window.location.href = "panier.html";
+            }
+        </script>
+    </head>
+    <body>
+        <header class="head">
+            <div class="img-logo">
+                <img class="img" src="extrastore.png" alt="Logo">
             </div>
-            <div class="product-details">
-                <h1>PC Portable ASUS TUF Gaming 
-                    A16 Advantage Edition AMD Ryzen 9
-                    16Go 512Go SSD</h1>
-                <p class="product-description">
-                    Écran 16" Full HD+ WUXGA IPS, 165Hz - Processeur: AMD Ryzen™ 9 7940HS (4.0 GHz up to 5.2 GHz Turbo max, 16 Mo de mémoire cache, Octa-Core) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 16 Go DDR5-4800 - Disque Dur: 512 Go SSD - Carte Graphique: AMD Radeon™ RX 7600S (8Go de mémoire dédiée GDDR6) avec WiFi, Bluetooth, 2x USB 3.2 Gen 1 Type-A, 1x USB 3.2 Gen 2 Type-C, 1x Type C USB 4 prise en charge DisplayPort, 1x HDMI 2.1, 1x RJ45, 1x prise audio combinée 3,5 mm - Clavier chiclet rétroéclairé - Couleur: Noir - Garantie: 2 ans
-                </p>
-                <p class="product-price">Prix : <strong>4539,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
-            </div>    
-        </div>
-        <div class="payment-facility">
-            <h2>Facilité de Paiement</h2>
-            <p>3 fois sans intérêts</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>3 mois</th>
-                        <th>6 mois</th>
-                        <th>9 mois</th>
-                        <th>12 mois</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1513.000 TND</td>
-                        <td>799.246 TND</td>
-                        <td>552.392 TND</td>
-                        <td>427.688 TND</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </main>
-    <footer class="footer">
-        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+            <nav class="nav-bar">
+                <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+            </nav>
+        </header>
+        <main class="product-page">
+            <div class="product-container">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="displayed-image" src="Tuf.png" alt="Produit principal">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img class="thumbnail" src="A16-photo/image1.jpg" alt="Image 1" onclick="changeImage('A16-photo/image1.jpg')">
+                        <img class="thumbnail" src="A16-photo/image2.jpg" alt="Image 2" onclick="changeImage('A16-photo/image2.jpg')">
+                        <img class="thumbnail" src="A16-photo/image3.jpg" alt="Image 3" onclick="changeImage('A16-photo/image3.jpg')">
+                        <img class="thumbnail" src="A16-photo/image4.jpg" alt="Image 4" onclick="changeImage('A16-photo/image4.jpg')">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h1>PC Portable ASUS TUF Gaming 
+                        A16 Advantage Edition AMD Ryzen 9
+                        16Go 512Go SSD</h1>
+                    <p class="product-description">
+                        Écran 16" Full HD+ WUXGA IPS, 165Hz - Processeur: AMD Ryzen™ 9 7940HS (4.0 GHz up to 5.2 GHz Turbo max, 16 Mo de mémoire cache, Octa-Core) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 16 Go DDR5-4800 - Disque Dur: 512 Go SSD - Carte Graphique: AMD Radeon™ RX 7600S (8Go de mémoire dédiée GDDR6) avec WiFi, Bluetooth, 2x USB 3.2 Gen 1 Type-A, 1x USB 3.2 Gen 2 Type-C, 1x Type C USB 4 prise en charge DisplayPort, 1x HDMI 2.1, 1x RJ45, 1x prise audio combinée 3,5 mm - Clavier chiclet rétroéclairé - Couleur: Noir - Garantie: 2 ans
+                    </p>
+                    <p class="product-price">Prix : <strong>4539,000 TND</strong></p>
+                    <button class="buy-btn" onclick="addToCart()">Confirmer l'achat</button>
+                </div>    
+            </div>
+            <div class="payment-facility">
+                <h2>Facilité de Paiement</h2>
+                <p>3 fois sans intérêts</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>3 mois</th>
+                            <th>6 mois</th>
+                            <th>9 mois</th>
+                            <th>12 mois</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1513.000 TND</td>
+                            <td>799.246 TND</td>
+                            <td>552.392 TND</td>
+                            <td>427.688 TND</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+        </footer>
+    </body>
+    </html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier | ExtraStore</title>
+    <link rel="stylesheet" href="style2.css">
+    <script>
+        function loadCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cart-container");
+    const cartTotal = document.getElementById("cart-total");
+    const checkoutButton = document.getElementById("checkout-button");
+
+    if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Votre panier est vide.</p>";
+        cartTotal.innerText = "0.000 TND";
+        checkoutButton.disabled = true;
+        checkoutButton.style.opacity = "0.6";
+        checkoutButton.style.cursor = "not-allowed";
+    } else {
+        let total = 0;
+        cart.forEach((product, index) => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("cart-item");
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p>Prix: ${product.price} TND</p>
+                    <button onclick="removeFromCart(${index})">Supprimer</button>
+                </div>
+            `;
+            cartContainer.appendChild(productElement);
+            total += product.price;
+        });
+        cartTotal.innerText = `${total.toFixed(3)} TND`;
+        checkoutButton.disabled = false;
+        checkoutButton.style.opacity = "1";
+        checkoutButton.style.cursor = "pointer";
+    }
+}
+
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function checkout() {
+            const checkoutForm = document.getElementById("checkout-form");
+            checkoutForm.style.display = "block";
+            checkoutForm.scrollIntoView({ behavior: "smooth" });
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const phone = document.getElementById("phone").value;
+
+            if (name && address && phone) {
+                const popup = document.getElementById("success-popup");
+                popup.style.display = "flex";
+                setTimeout(() => {
+                    popup.style.opacity = "1";
+                }, 10);
+
+                setTimeout(() => {
+                    popup.style.opacity = "0";
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                        localStorage.removeItem("cart");
+                        window.location.href = "index.html";
+                    }, 500); 
+                }, 5000); 
+            } else {
+                alert("Veuillez remplir tous les champs pour continuer.");
+            }
+}
+
+
+    </script>
+    <style>
+        #checkout-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .img-logo img {
+            height: 40px;
+            margin-left: 20px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        #cart {
+            margin: 20px;
+            padding: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #cart-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cart-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            flex: 1 1 calc(33% - 20px);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .cart-item-details {
+            text-align: center;
+        }
+
+        .cart-item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .cart-item p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .cart-item button {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .cart-item button:hover {
+            background-color: #cc0000;
+        }
+
+        #cart-summary {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #cart-summary p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #checkout-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #checkout-button:hover {
+            background-color: #005f75;
+        }
+
+        #checkout-form {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        #checkout-form input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #checkout-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #checkout-form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .popup p {
+            background: #4CAF50;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        </style>
+        
+</head>
+    <div id="success-popup" class="popup">
+        <p>Votre commande a été passée avec succès ! Vous allez le recevoir dans moins de 48H !</p>
+    </div>
+<body onload="loadCart()">
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <section id="cart">
+        <h2>Votre Panier</h2>
+        <div id="cart-container"></div>
+        <div id="cart-summary">
+            <p>Total : <span id="cart-total">0.000 TND</span></p>
+            <button id="checkout-button" onclick="checkout()">Passer à la caisse</button>
+        </div>
+        <form id="checkout-form" onsubmit="submitOrder(event)">
+            <h3>Informations de livraison</h3>
+            <input type="text" id="name" placeholder="Nom complet" required>
+            <input type="text" id="address" placeholder="Adresse" required>
+            <input type="text" id="ville" placeholder="ville" required>
+            <input type="tel" id="phone" placeholder="Numéro de téléphone" required>
+            <button type="submit">Confirmer la commande</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

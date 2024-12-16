@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page | Extra Store</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        const popup = document.createElement("div");
+
+        popup.classList.add("popup");
+        popup.innerHTML = `
+            <h2>Login validé !</h2>
+            <button id="close-popup">OK</button>
+        `;
+        document.body.appendChild(popup);
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            popup.style.display = "block";
+
+            form.reset();
+        });
+
+        document.body.addEventListener("click", function (event) {
+            if (event.target.id === "close-popup") {
+                popup.style.display = "none";
+                window.location.href = "index.html";
+            }
+        });
+    });
+    </script>
+    
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <div class="login-container">
+        <fieldset>
+            <legend class="legende">Connectez-vous !</legend>
+            <form >
+                <div class="name">
+                    <label for="name">Nom</label>
+                    <input id="name" type="text" name="Nom" placeholder="Entrer votre nom">
+                </div>
+                <div class="surname">
+                    <label for="surname">Prenom</label>
+                    <input  id="surname" type="text" name="Prenom" placeholder="Entrer votre Prenom">
+                </div>
+                <div class="mail">
+                    <label for="mail">E-mail</label>
+                    <input id="mail" required type="email" name="Email" placeholder="Entrer votre E-mail">
+                </div>
+                <div class="password">
+                    <label  for="password">Mot De Passe</label>
+                    <input id="password" required type="password" name="password" placeholder="Entrer votre Mot de passe">
+                </div>
+                <input type="submit" value="Connexion">
+                <input type="reset" value="Effacer">
+            </form>
+        </fieldset>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

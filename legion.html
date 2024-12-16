@@ -10,6 +10,23 @@
             const displayedImage = document.getElementById("displayed-image");
             displayedImage.src = imageSrc;
         }
+    
+        function addToCart() {
+            const product = {
+                name: "PC Portable Gamer LENOVO Légion Pro 5 16ARX8 AMD RYZEN 7 16Go RTX 4050",
+                description: "Écran 16\" WQXGA IPS, 240 Hz, Processeur AMD Ryzen™ 7 7745HX, 16Go RAM, NVIDIA GeForce RTX 4050, 1To SSD",
+                price: 4499.000,
+                image: document.getElementById("displayed-image").src
+            };
+    
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+            cart.push(product);
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+    
+            window.location.href = "panier.html";
+        }
     </script>
 </head>
 <body>
@@ -42,7 +59,7 @@
                     Écran 16" WQXGA IPS, 240 Hz - Processeur: AMD Ryzen™ 7 7745HX (3.6 GHz up to 5.1 GHz Turbo max, 32Mo de mémoire cache, Octa-Core) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 16Go DDR5-5200 - Disque Dur: 1To SSD - Carte Graphique: NVIDIA GeForce RTX 4050 (6Go de mémoire dédiée GDDR6) avec Wi-Fi, Bluetooth, 4x USB 3.2 Gen 1, 2x USB-C 3.2 Gen 2, 1x HDMI 2.1, 1x RJ-45, 1x prise combo casque/microphone (3,5 mm),1x connecteur d'alimentation - Clavier Rétroéclairé RVB 4 zones - Couleur: Gris - Garantie: 2
                 </p>
                 <p class="product-price">Prix : <strong>4499,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
+                <button class="buy-btn" onclick="addToCart()">Confirmer l'achat</button>
             </div>    
         </div>
         <div class="payment-facility">

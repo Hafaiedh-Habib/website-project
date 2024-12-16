@@ -192,6 +192,7 @@ footer.footer {
 #exit svg{
     position: relative;
     top: 6px;
+    left: 5px;
 }
 
 @media (max-width: 1024px) {

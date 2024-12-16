@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About | ExtraStore</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .img-logo img {
+            height: 50px;
+        }
+
+        .about {
+            padding: 50px 20px 10px 20px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555555;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            color: white;
+        }
+
+        @media (min-width : 878px){
+            footer{
+                position: fixed;
+                bottom: 0;
+        
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="img-logo">
+            <img class="img" src="extrastore.png" alt="Logo ExtraStore">
+        </div>
+        <nav class="nav-bar">
+            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+        </nav>
+    </header>
+    <article class="about">
+        <h1>A propos d'ExtraStore</h1>
+        <p>ExtraStore est votre boutique en ligne spécialisée dans la vente de PC portables gamers, offrant des produits de haute qualité aux meilleurs prix. Nous nous engageons à fournir des produits performants et à répondre aux besoins spécifiques des gamers et des utilisateurs professionnels.</p>
+        <h2>Notre Mission</h2>
+        <p>Offrir un large choix d'ordinateurs portables de gaming et de matériel informatique avec un service client irréprochable.</p>
+        <h2>Nos Valeurs</h2>
+        <ul>
+            <li>Qualité</li>
+            <li>Innovation</li>
+            <li>Satisfaction client</li>
+        </ul>
+    </article>
+    <footer>
+        <p>&copy; 2024 ExtraStore | Tous droits réservés</p>
+    </footer>
+</body>
+</html>

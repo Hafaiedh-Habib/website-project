@@ -1,0 +1,126 @@
+.login-container {
+    width: 340px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s;
+}
+
+.login-container:hover {
+    transform: scale(1.02);
+}
+
+.legende {
+    font-size: 1.5em;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+    border-color: #0056b3;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    width: 120px;
+    padding: 10px;
+    margin: 5px 1%;
+    margin-left: 15px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: translateY(0);
+}
+
+.name,
+.surname,
+.mail,
+.password {
+    margin-bottom: 15px;
+}
+
+.popup {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    height: 80px;
+    width: 170px;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    display: none;
+}
+
+.popup h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup button:hover {
+    background-color: #0056b3;
+}

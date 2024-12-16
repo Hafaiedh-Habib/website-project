@@ -10,6 +10,20 @@
             const displayedImage = document.getElementById("displayed-image");
             displayedImage.src = imageSrc;
         }
+
+        function addToCart() {
+            const product = {
+                name: "Pc Portable Gamer MSI Thin GF63",
+                description: "CPU Intel Core i5-12450H, 8Go RAM, RTX 2050, 15.6\" FHD 144Hz",
+                price: 2499.000,
+                image: document.getElementById("displayed-image").src
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push(product);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "panier.html";
+        }
     </script>
 </head>
 <body>
@@ -18,7 +32,7 @@
             <img class="img" src="extrastore.png" alt="Logo">
         </div>
         <nav class="nav-bar">
-            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+            <a id="exit" href="index.html">Exit<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
         </nav>
     </header>
     <main class="product-page">
@@ -39,10 +53,10 @@
                     12UCX-216XFR, I5-12ème, 8Go
                     RTX 2050 "15.6" FHD 144Hz</h1>
                 <p class="product-description">
-                    pc Gamer MSI, CPU Intel Core i5-12450H Octa-Core (up to 4.4GHz Turbo 12Mo Smart Cache), Mémoire RAM 8Go DDR4, Disque Dur 512Go SSD NVMe, C.Graphique NVIDIA GeForce RTX 2050 4Go GDDR6, WiFi 6, Bluetooth 5.2, Clavier Rétroéclairé Rouge, Ecran 15.6" FHD 144Hz.
+                    PC Gamer MSI, CPU Intel Core i5-12450H Octa-Core (up to 4.4GHz Turbo 12Mo Smart Cache), Mémoire RAM 8Go DDR4, Disque Dur 512Go SSD NVMe, C.Graphique NVIDIA GeForce RTX 2050 4Go GDDR6, WiFi 6, Bluetooth 5.2, Clavier Rétroéclairé Rouge, Ecran 15.6" FHD 144Hz.
                 </p>
                 <p class="product-price">Prix : <strong>2499,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
+                <button class="buy-btn" onclick="addToCart()">Confirmer l'achat</button>
             </div>    
         </div>
         <div class="payment-facility">

@@ -10,6 +10,23 @@
             const displayedImage = document.getElementById("displayed-image");
             displayedImage.src = imageSrc;
         }
+    
+        function addToCart() {
+            const product = {
+                name: "PC Portable Gamer LENOVO LOQ 15IAX9 i5 12ème Gén 16Go RTX 2050",
+                description: "Écran 15.6\" Full HD IPS, 144Hz, Processeur Intel Core i5-12450HX, 16Go RAM, NVIDIA GeForce RTX 2050, 512Go SSD",
+                price: 2209.000,
+                image: document.getElementById("displayed-image").src
+            };
+    
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+            cart.push(product);
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+    
+            window.location.href = "panier.html";
+        }
     </script>
 </head>
 <body>
@@ -43,7 +60,7 @@
                     + Souris RVB Lenovo LOQ M100    
                 </p>
                 <p class="product-price">Prix : <strong>2209,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
+                <button class="buy-btn" onclick="addToCart()">Confirmer l'achat </button>
             </div>    
         </div>
         <div class="payment-facility">

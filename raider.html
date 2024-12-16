@@ -10,6 +10,23 @@
             const displayedImage = document.getElementById("displayed-image");
             displayedImage.src = imageSrc;
         }
+    
+        function addToCart() {
+            const product = {
+                name: "PC Portable Gamer MSI Raider GE68 HX 13V i7 13è Gén 16Go RTX 4060",
+                description: "Écran 16\" QHD+, IPS, 240 Hz, Intel Core i7-13700HX, 16 Go RAM, NVIDIA GeForce RTX 4060, 1 To SSD",
+                price: 6299.000,
+                image: document.getElementById("displayed-image").src
+            };
+    
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+            cart.push(product);
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+    
+            window.location.href = "panier.html";
+        }
     </script>
 </head>
 <body>
@@ -42,7 +59,7 @@
                     Écran 16" QHD+, IPS, 240 Hz - Processeur: Intel Core i7-13700HX (Up to 5.00 GHz Turbo max, 30 Mo de mémoire cache, 16-Cores) - Système d'exploitation: Windows 11 Famille - Mémoire RAM: 16 Go DDR5 - Disque dur: 1 To SSD - Carte graphique: NVIDIA GeForce RTX 4060 (8 Go de mémoire dédiée GDDR6) avec Wi-Fi, Bluetooth, 1x Thunderbolt™ 4, 1x Type-C USB 3.2 Gen 2, 1x USB 3.2 Gen 1 Type-A, 1x USB 3.2 Gen 2 Type-A, 1x HDMI™ 2.1, 1x RJ45, 1x prise combinée entrée micro/sortie casque, 1x Lecteur de carte SD Express - Clavier Rétroéclairé LED RGB touche par touche - Couleur: Noir - Garantie: 1 an
                 </p>
                 <p class="product-price">Prix : <strong>6299,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
+                <button class="buy-btn" onclick="addToCart()">Confirmer l'achat</button>
             </div>    
         </div>
         <div class="payment-facility">

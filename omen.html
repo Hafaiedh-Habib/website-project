@@ -1,75 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Produit | omen</title>
-    <link rel="stylesheet" href="style2.css">
-    <script>
-        function changeImage(imageSrc) {
-            const displayedImage = document.getElementById("displayed-image");
-            displayedImage.src = imageSrc;
-        }
-    </script>
-</head>
-<body>
-    <header class="head">
-        <div class="img-logo">
-            <img class="img" src="extrastore.png" alt="Logo">
-        </div>
-        <nav class="nav-bar">
-            <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
-        </nav>
-    </header>
-    <main class="product-page">
-        <div class="product-container">
-            <div class="product-gallery">
-                <div class="main-image">
-                    <img id="displayed-image" src="omen.png" alt="Produit principal">
-                </div>
-                <div class="thumbnail-container">
-                    <img class="thumbnail" src="omen-photo/image1.jpg" alt="Image 1" onclick="changeImage('omen-photo/image1.jpg')">
-                    <img class="thumbnail" src="omen-photo/image2.jpg" alt="Image 2" onclick="changeImage('omen-photo/image2.jpg')">
-                    <img class="thumbnail" src="omen-photo/image3.jpg" alt="Image 3" onclick="changeImage('omen-photo/image3.jpg')">
-                    <img class="thumbnail" src="omen-photo/image4.jpg" alt="Image 4" onclick="changeImage('omen-photo/image4.jpg')">
-                </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Produit | omen</title>
+        <link rel="stylesheet" href="style2.css">
+        <script>
+            function changeImage(imageSrc) {
+                const displayedImage = document.getElementById("displayed-image");
+                displayedImage.src = imageSrc;
+            }
+        
+            function addToCart() {
+                const product = {
+                    name: "PC Portable Gamer HP OMEN 16-wf1005nk i9 14è Gén 16Go RTX 4070",
+                    description: "Écran 16.1\" Full HD IPS, 165Hz, Intel Core i9-14900HX, 16 Go RAM, NVIDIA GeForce RTX 4070, 1 To SSD",
+                    price: 5979.000,
+                    image: document.getElementById("displayed-image").src
+                };
+        
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+                cart.push(product);
+        
+                localStorage.setItem("cart", JSON.stringify(cart));
+        
+                window.location.href = "panier.html";
+            }
+        </script>
+    </head>
+    <body>
+        <header class="head">
+            <div class="img-logo">
+                <img class="img" src="extrastore.png" alt="Logo">
             </div>
-            <div class="product-details">
-                <h1>PC Portable Gamer HP OMEN 
-                    16-wf1005nk i9 14è Gén 
-                    16Go RTX 4070</h1>
-                <p class="product-description">
-                    Écran 16.1" Full HD IPS, 165Hz - Processeur: Intel Core i9-14900HX (Up to 5.8 GHz Turbo max, 36 Mo de mémoire cache, 24-Cores) - Système d'exploitation: Windows 11 Famille - Mémoire: 16 Go DDR5-5600 MHz - Disque dur: 1To SSD - Carte graphique: NVIDIA GeForce RTX 4070 (8 Go de mémoire dédiée GDDR6), avec Wi-Fi, Bluetooth, 2x USB Type-A, 2x Thunderbolt™ 4 avec USB Type-C, 1x HDMI 2.1, 1x RJ-45, 1x prise secteur Smart Pin, 1x prise combinée casque/microphone - Clavier rétroéclairé RGB, de grande taille, 4 zones et doté de la technologie anti-ghosting avec rollover sur 26 touches - Couleur: Noir - Garantie: 1 an
-                </p>
-                <p class="product-price">Prix : <strong>5979,000 TND</strong></p>
-                <button class="buy-btn">Confirmer l'achat</button>
-            </div>    
-        </div>
-        <div class="payment-facility">
-            <h2>Facilité de Paiement</h2>
-            <p>3 fois sans intérêts</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>3 mois</th>
-                        <th>6 mois</th>
-                        <th>9 mois</th>
-                        <th>12 mois</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1993.000 TND</td>
-                        <td>1051.142 TND</td>
-                        <td>726.297	 TND</td>
-                        <td>562.186 TND</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </main>
-    <footer class="footer">
-        <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+            <nav class="nav-bar">
+                <a id="exit" href="index.html">Exit <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg></a>
+            </nav>
+        </header>
+        <main class="product-page">
+            <div class="product-container">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="displayed-image" src="omen.png" alt="Produit principal">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img class="thumbnail" src="omen-photo/image1.jpg" alt="Image 1" onclick="changeImage('omen-photo/image1.jpg')">
+                        <img class="thumbnail" src="omen-photo/image2.jpg" alt="Image 2" onclick="changeImage('omen-photo/image2.jpg')">
+                        <img class="thumbnail" src="omen-photo/image3.jpg" alt="Image 3" onclick="changeImage('omen-photo/image3.jpg')">
+                        <img class="thumbnail" src="omen-photo/image4.jpg" alt="Image 4" onclick="changeImage('omen-photo/image4.jpg')">
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h1>PC Portable Gamer HP OMEN 
+                        16-wf1005nk i9 14è Gén 
+                        16Go RTX 4070</h1>
+                    <p class="product-description">
+                        Écran 16.1" Full HD IPS, 165Hz - Processeur: Intel Core i9-14900HX (Up to 5.8 GHz Turbo max, 36 Mo de mémoire cache, 24-Cores) - Système d'exploitation: Windows 11 Famille - Mémoire: 16 Go DDR5-5600 MHz - Disque dur: 1To SSD - Carte graphique: NVIDIA GeForce RTX 4070 (8 Go de mémoire dédiée GDDR6), avec Wi-Fi, Bluetooth, 2x USB Type-A, 2x Thunderbolt™ 4 avec USB Type-C, 1x HDMI 2.1, 1x RJ-45, 1x prise secteur Smart Pin, 1x prise combinée casque/microphone - Clavier rétroéclairé RGB, de grande taille, 4 zones et doté de la technologie anti-ghosting avec rollover sur 26 touches - Couleur: Noir - Garantie: 1 an
+                    </p>
+                    <p class="product-price">Prix : <strong>5979,000 TND</strong></p>
+                    <button class="buy-btn" onclick="addToCart()">Confirmer l'achat</button>
+                </div>    
+            </div>
+            <div class="payment-facility">
+                <h2>Facilité de Paiement</h2>
+                <p>3 fois sans intérêts</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>3 mois</th>
+                            <th>6 mois</th>
+                            <th>9 mois</th>
+                            <th>12 mois</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1993.000 TND</td>
+                            <td>1051.142 TND</td>
+                            <td>726.297	 TND</td>
+                            <td>562.186 TND</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 ExtraStore. Tous droits réservés.</p>
+        </footer>
+    </body>
+    </html>

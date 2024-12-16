@@ -7,23 +7,61 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("newsletter-form");
+            const emailInput = document.getElementById("mail");
+            const popup = document.createElement("div");
+
+            popup.classList.add("popup");
+            popup.innerHTML = `
+                <div class="popup-content">
+                    <h2>Inscription réussie !</h2>
+                    <p>Merci de vous être inscrit à notre newsletter.</p>
+                    <button id="close-newsletter-popup">OK</button>
+                </div>
+            `;
+            document.body.appendChild(popup);
+
+            popup.style.display = "none";
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const email = emailInput.value.trim(); 
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (emailRegex.test(email)) {
+                    popup.style.display = "flex";
+                    form.reset();
+                    window.scrollTo(0, 0);
+                }
+            });
+
+            document.body.addEventListener("click", function (event) {
+                if (event.target.id === "close-newsletter-popup") {
+                    popup.style.display = "none";
+                }
+            });
+        });
+    </script>
     <link rel="stylesheet" href="style.css">
-    <title>Computer Zone | Habib Hafaiedh</title>
+    <title> EXTRA STORE | Habib Hafaiedh</title>
 </head>
 <body>
     <header class="head">
         <div class="img-logo">
-            <img class="img" src="extrastore.png">
+            <img class="img" src="extrastore.png" alt="Extra Store Logo">
         </div>
         <div class="login-bar">
-            <span class="material-icons-outlined" aria-label="Login">
+            <a href="login.html"><span class="material-icons-outlined" aria-label="Login">
                 people
-            </span>
+            </span></a>
         </div>
         <div class="shopping-bar">
-            <span class="material-icons-outlined" aria-label="Shopping Cart">
+            <a href="panier.html"><span class="material-icons-outlined" aria-label="Shopping Cart">
                 shopping_cart
-            </span>
+            </span></a>
         </div>
     </header>
     <nav>
@@ -34,10 +72,10 @@
             </label>
             <ul>
                 <li><a class="active" href="index.html">Store</a></li>
-                <li><a class="navigator" href="#">About</a></li>
-                <li><a class="navigator" href="#">Service</a></li>
-                <li><a class="navigator" href="#">Contact</a></li>
-                <li><a class="navigator" href="#">Feedback</a></li>
+                <li><a class="navigator" href="about.html">About</a></li>
+                <li><a class="navigator" href="service.html">Service</a></li>
+                <li><a class="navigator" href="contact.html">Contact</a></li>
+                <li><a class="navigator" href="feedback.html">Feedback</a></li>
             </ul>
         </div>
     </nav>
@@ -208,8 +246,8 @@
         <div class="newsletter">
             <p>S'INSCRIRE AUX NEWSLETTERS</p>
             <p class="inscri">Inscrivez-vous à la newsletter ExtraStore</p>
-            <form >
-                <input  type="email" name="email" id="mail" placeholder="Saisissez votre mail">
+            <form id="newsletter-form" >
+                <input  required type="email" name="email" id="mail" placeholder="Saisissez votre mail">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
                 <input type="submit" value="Souscrire">
             </form>
